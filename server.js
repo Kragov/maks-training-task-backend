@@ -2,11 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const Product = require("./schema");
+const cors = require("cors");
 
 const app = express();
 require("dotenv").config();
 
 const port = process.env.PORT;
+app.use(cors({ origin: "*" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
