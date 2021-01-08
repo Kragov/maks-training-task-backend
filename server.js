@@ -6,7 +6,7 @@ const Product = require("./schema");
 const app = express();
 require("dotenv").config();
 
-const port = 8000;
+const port = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
