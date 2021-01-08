@@ -9,6 +9,7 @@ require("dotenv").config();
 
 const port = process.env.PORT;
 app.options("*", cors());
+app.headers = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Credentials": true };
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
