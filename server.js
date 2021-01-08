@@ -8,7 +8,7 @@ const app = express();
 require("dotenv").config();
 
 const port = process.env.PORT;
-app.use(cors({ origin: "*" }));
+app.options("*", cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

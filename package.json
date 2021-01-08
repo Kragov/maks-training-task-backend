@@ -23,10 +23,10 @@
     "mongodb": "^3.6.3",
     "dotenv": "^8.2.0",
     "mongoose": "^5.11.10",
+    "cors": "^2.8.5",
     "nodemon": "^2.0.7"
   },
   "devDependencies": {
-    "cors": "^2.8.5",
     "prettier": "^2.2.1"
   }
 }
