@@ -32,6 +32,7 @@ async function start() {
 
 		app.get("/product", async (req, res) => {
 			const products = await Product.find({});
+			res.setHeader("Access-Control-Allow-Origin", "*");
 			res.json(products).status(200);
 		});
 
