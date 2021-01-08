@@ -9,7 +9,6 @@ require("dotenv").config();
 
 const port = process.env.PORT;
 app.options("*", cors());
-app.headers = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Credentials": true };
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -24,6 +23,7 @@ async function start() {
 			if (!!req.body.name && !!req.body.amount) {
 				const product = new Product({ name: req.body.name, amount: req.body.amount });
 				product.save();
+				res.setHeader("Access-Control-Allow-Origin", "*");
 				res.send().status(200);
 			} else {
 				res.send().status(400);
